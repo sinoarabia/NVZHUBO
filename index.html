@@ -35,60 +35,28 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--primary-bg); /*[cite: 1] */
-            color: var(--text-dark); /*[cite: 1] */
-            line-height: 1.5; /*[cite: 1] */
-            padding: 15px 10px; /*[cite: 1] */
-            position: relative; /* 为两侧的背景线条做定位基准 */
-            overflow-x: hidden;
+            background-color: var(--primary-bg); 
+            color: var(--text-dark); 
+            line-height: 1.5; 
+            padding: 15px 10px; 
+            /* 已经彻底移除了侧边的丑陋火柴人代码 */
         }
-
-        /* ==================== 侧边绿色粗体人体线条画 (智能响应式：仅大屏显示) ==================== */
-        @media (min-width: 1100px) {
-            body::before, body::after {
-                content: "";
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 250px;
-                height: 700px;
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0.8; /* 保证透明度足够清晰 */
-                z-index: -1; /* 置于底层，不影响任何按钮点击 */
-            }
-            
-            /* 左侧线条：绘制女、男、女 */
-            body::before {
-                left: calc(50% - 550px); /* 完美避开中间550px宽的主体容器 */
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 700'%3E%3Cg fill='none' stroke='%23008000' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Female 1 --%3E%3Ccircle cx='70' cy='120' r='22'/%3E%3Cpath d='M25 400 L55 210 Q70 160 85 210 L115 400 M55 210 L30 290 M85 210 L110 290'/%3E%3C!-- Male 1 --%3E%3Ccircle cx='180' cy='280' r='22'/%3E%3Cpath d='M140 560 L160 370 Q180 320 200 370 L220 560 M160 370 L135 450 M200 370 L225 450'/%3E%3C!-- Female 2 --%3E%3Ccircle cx='60' cy='450' r='22'/%3E%3Cpath d='M15 730 L45 540 Q60 490 75 540 L105 730 M45 540 L20 620 M75 540 L100 620'/%3E%3C/g%3E%3C/svg%3E");
-            }
-
-            /* 右侧线条：绘制男、女、男 */
-            body::after {
-                right: calc(50% - 550px); /* 完美避开中间550px宽的主体容器 */
-                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 700'%3E%3Cg fill='none' stroke='%23008000' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Male 1 --%3E%3Ccircle cx='180' cy='150' r='22'/%3E%3Cpath d='M140 430 L160 240 Q180 190 200 240 L220 430 M160 240 L135 320 M200 240 L225 320'/%3E%3C!-- Female 1 --%3E%3Ccircle cx='70' cy='320' r='22'/%3E%3Cpath d='M25 600 L55 410 Q70 360 85 410 L115 600 M55 410 L30 490 M85 410 L110 490'/%3E%3C!-- Male 2 --%3E%3Ccircle cx='170' cy='480' r='22'/%3E%3Cpath d='M130 760 L150 570 Q170 520 190 570 L210 760 M150 570 L125 650 M190 570 L215 650'/%3E%3C/g%3E%3C/svg%3E");
-            }
-        }
-        /* ========================================================================================= */
 
         .container {
-            max-width: 550px; /*[cite: 1] */
-            margin: 0 auto; /*[cite: 1] */
-            background: #fff; /*[cite: 1] */
-            border-radius: 24px; /*[cite: 1] */
-            box-shadow: 0 10px 30px rgba(255, 75, 114, 0.12); /*[cite: 1] */
-            overflow: hidden; /*[cite: 1] */
+            max-width: 550px; 
+            margin: 0 auto; 
+            background: #fff; 
+            border-radius: 24px; 
+            box-shadow: 0 10px 30px rgba(255, 75, 114, 0.12); 
+            overflow: hidden; 
         }
         
-        /* 头部排版视觉区 (5男5女绿色加粗人体线条背景) */
+        /* 头部排版视觉区 (恢复干净的渐变，或者您以后放真图) */
         .header-banner {
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 241, 243, 0.85)),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300'%3E%3Cg fill='none' stroke='%23008000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' opacity='0.7'%3E%3Ccircle cx='50' cy='60' r='15'/%3E%3Cpath d='M25 240 L35 130 Q50 100 65 130 L75 240 M35 130 L15 180 M65 130 L85 180'/%3E%3Ccircle cx='150' cy='60' r='15'/%3E%3Cpath d='M115 240 L140 130 Q150 100 160 130 L185 240 M140 130 L120 180 M160 130 L180 180'/%3E%3Ccircle cx='250' cy='60' r='15'/%3E%3Cpath d='M225 240 L235 130 Q250 100 265 130 L275 240 M235 130 L215 180 M265 130 L285 180'/%3E%3Ccircle cx='350' cy='60' r='15'/%3E%3Cpath d='M315 240 L340 130 Q350 100 360 130 L385 240 M340 130 L320 180 M360 130 L380 180'/%3E%3Ccircle cx='450' cy='60' r='15'/%3E%3Cpath d='M425 240 L435 130 Q450 100 465 130 L475 240 M435 130 L415 180 M465 130 L485 180'/%3E%3Ccircle cx='550' cy='60' r='15'/%3E%3Cpath d='M515 240 L540 130 Q550 100 560 130 L585 240 M540 130 L520 180 M560 130 L580 180'/%3E%3Ccircle cx='650' cy='60' r='15'/%3E%3Cpath d='M625 240 L635 130 Q650 100 665 130 L675 240 M635 130 L615 180 M665 130 L685 180'/%3E%3Ccircle cx='750' cy='60' r='15'/%3E%3Cpath d='M715 240 L740 130 Q750 100 760 130 L785 240 M740 130 L720 180 M760 130 L780 180'/%3E%3Ccircle cx='850' cy='60' r='15'/%3E%3Cpath d='M825 240 L835 130 Q850 100 865 130 L875 240 M835 130 L815 180 M865 130 L885 180'/%3E%3Ccircle cx='950' cy='60' r='15'/%3E%3Cpath d='M915 240 L940 130 Q950 100 960 130 L985 240 M940 130 L920 180 M960 130 L980 180'/%3E%3C/g%3E%3C/svg%3E");
+            /* 如果您以后有好看的真实背景图，可以把 url('您的图片.png') 加上去 */
+            background: linear-gradient(180deg, #ffeef1 0%, #ffffff 100%);
             background-size: cover;
-            background-position: center bottom;
+            background-position: center;
             padding: 30px 20px 15px 20px;
             text-align: center;
             border-bottom: 1px solid #ffe3e8;
