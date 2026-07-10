@@ -1,0 +1,544 @@
+<!DOCTYPE html><html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一站式多平台代充代订服务 - 轻松解锁全球优质内容</title>
+    <!-- 优化：外部高效小图标 -->
+    <link rel="icon" href="https://pages.dev">
+    
+    <style>
+        :root {
+            --primary-color: #ff4b72;
+            --primary-bg: #fff1f3;
+            --success-color: #28a745;
+            --qq-color: #1296db;
+            --tg-color: #00aff0;
+            --text-dark: #212529;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 15px 10px;
+        }
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(255, 75, 114, 0.12);
+            overflow: hidden;
+        }
+        
+        /* 头部排版视觉区 */
+        .header-banner {
+            background: linear-gradient(180deg, #ffeef1 0%, #ffffff 100%);
+            padding: 30px 20px 15px 20px;
+            text-align: center;
+        }
+        .badge-top {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 4px 15px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .main-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #212529;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .sub-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .tagline {
+            font-size: 13px;
+            color: #666;
+            font-weight: 600;
+        }
+        .tagline span { color: var(--primary-color); margin: 0 3px; }
+
+        .content-body { padding: 0 20px 25px 20px; }
+
+        /* 8大平台矩阵与矢量LOGO专属对齐配置 */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .platform-card {
+            background: #ffffff;
+            border: 1px solid #f1f3f5;
+            border-radius: 14px;
+            padding: 14px 6px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .platform-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 75, 114, 0.08);
+            border-color: #ffe3e8;
+        }
+        .platform-logo {
+            margin-bottom: 6px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .platform-name { 
+            font-size: 11px; 
+            font-weight: 700; 
+            color: #6c757d; 
+            letter-spacing: 0.2px;
+        }
+        
+        /* 官方矢量图形卡片统一对齐渲染 */
+        .c-logo-svg { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+        .c-of-shd { filter: drop-shadow(0 2px 4px rgba(0, 142, 230, 0.15)); }
+        .c-mf-shd { filter: drop-shadow(0 2px 4px rgba(255, 58, 105, 0.15)); }
+        .c-fly-shd { filter: drop-shadow(0 2px 4px rgba(0, 102, 255, 0.15)); }
+        .c-mv-shd { filter: drop-shadow(0 2px 4px rgba(255, 42, 115, 0.15)); }
+        /* 四大保障标签 */
+        .features-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .feature-item {
+            background: #fff5f6;
+            border: 1px solid #ffe3e7;
+            border-radius: 10px;
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .feature-icon { font-size: 16px; }
+        .feature-text div:first-child { font-size: 12px; font-weight: bold; color: #d63384; }
+        .feature-text div:last-child { font-size: 10px; color: #868e96; }
+
+        /* 营销宣传双卡片 */
+        .promo-section {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .promo-left {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .promo-left h4 { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
+        .promo-left p { font-size: 11px; opacity: 0.9; }
+        .promo-right {
+            background-color: #fef7ec;
+            border: 1px solid #fbe6c4;
+            color: #795548;
+            border-radius: 14px;
+            padding: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .promo-right h4 { font-size: 13px; font-weight: 800; color: #5d4037; }
+        .promo-right p { font-size: 10px; color: #8d6e63; margin-bottom: 4px; }
+        .promo-tag { background: var(--primary-color); color: #fff; font-size: 9px; padding: 1px 6px; border-radius: 10px; font-weight: bold; }
+
+        .web-url-tips {
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 25px;
+        }
+        .web-url-tips span { color: var(--primary-color); }
+
+        /* 重要提醒：粉色色系主题升级 */
+        .notice-box {
+            background-color: #fff5f6;
+            border: 2px solid #ffe3e7;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(255, 75, 114, 0.04);
+        }
+        .notice-title { font-size: 14px; font-weight: 800; color: #d63384; margin-bottom: 10px; }
+        .notice-item { background: #ffffff; padding: 10px; border-radius: 8px; font-size: 12.5px; color: #495057; line-height: 1.5; margin-bottom: 8px; border: 1px solid #ffe3e7; }
+        .notice-item:last-child { margin-bottom: 0; }
+        .notice-num { color: var(--primary-color); font-weight: bold; }
+
+        .section-title { font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #666; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+        /* QQ群群组卡片 */
+        .qq-group-box {
+            border: 1px solid #ffccd5;
+            background: #fff5f6;
+            border-radius: 14px;
+            padding: 15px 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .qq-group-title { font-size: 13px; font-weight: bold; color: #ff4b72; margin-bottom: 12px; }
+        .qq-group-list { display: flex; justify-content: center; align-items: center; gap: 4px; }
+        .qq-num-btn { background-color: #f0f7ff; color: #0056b3; font-weight: bold; font-size: 12px; padding: 5px 8px; border-radius: 6px; border: 1px solid #cce3ff; cursor: pointer; }
+        .qq-num-btn:active { background-color: #cce3ff; }
+        .qq-divider { color: #ffccd5; font-size: 12px; }
+
+        /* 客服联络卡片 */
+        .contact-card { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 14px; border-radius: 10px; font-weight: bold; text-decoration: none; color: #fff; font-size: 15px; border: none; cursor: pointer; width: 100%; }
+        .btn:active { transform: scale(0.99); opacity: 0.9; }
+        .btn-wechat { background-color: var(--success-color); }
+        .btn-qq { background-color: var(--qq-color); }
+        .btn-tg { background-color: var(--tg-color); }
+        
+       /* 🔗 网址直达板块：全新升级居中对齐与视觉优化 */
+        .direct-links-box {
+            background-color: #ffffff;
+            border: 1px solid #ffe3e8;
+            padding: 18px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(255, 75, 114, 0.02);
+        }
+        .links-title { 
+            font-size: 13.5px; 
+            font-weight: bold; 
+            color: #d63384; 
+            margin-bottom: 15px; 
+            text-align: center; 
+        }
+        .links-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); /* 完美的双列分布 */
+            gap: 12px 20px; /* 增大间距，让呼吸感更强 */
+        }
+        .direct-url { 
+            font-size: 13px; 
+            color: #0056b3; 
+            text-decoration: none; 
+            font-weight: 500; 
+            padding-bottom: 6px; 
+            text-align: center; /* ✨ 核心修改：让网址文字完美居中 */
+            border-bottom: 1px dashed #f1f3f5; /* ✨ 完美复刻截图：下方带一条淡淡的虚线，更好看 */
+            transition: all 0.2s ease;
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
+        }
+        .direct-url:hover { 
+            color: #ff4b72; 
+            border-bottom-color: #ff4b72; 
+            transform: scale(1.02); /* 鼠标悬停时轻微放大，增加互动感 */
+        }
+
+        /* 留言反馈表单样式 */
+        .message-board { background-color: #fdf8f9; border: 1px solid #ffe3e8; padding: 18px; border-radius: 14px; }
+        .message-title { font-size: 13px; font-weight: bold; color: #d63384; margin-bottom: 12px; text-align: center; }
+        .form-group { margin-bottom: 10px; }
+        .form-input, .form-textarea { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 8px; font-size: 13px; outline: none; }
+        .form-input:focus, .form-textarea:focus { border-color: var(--primary-color); }
+        .form-textarea { resize: vertical; min-height: 70px; font-family: inherit; }
+        .submit-btn { background-color: var(--primary-color); color: #fff; border: none; padding: 11px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; width: 100%; }
+
+        .footer { text-align: center; font-size: 11px; color: #adb5bd; margin-top: 25px; border-top: 1px solid #ffe3e8; padding-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 顶部排版区 -->
+    <div class="header-banner">
+        <div class="badge-top">一站式代订阅服务</div>
+        <h1 class="main-title">多平台代订阅</h1>
+        <h2 class="sub-title">轻松解锁全球优质内容</h2>
+        <div class="tagline"><span>♥</span> 安全可靠 <span>|</span> 无坑无骗 <span>|</span> 订阅无忧 <span>♥</span></div>
+    </div>
+    <div class="content-body">
+        <!-- 1:1 像素级还原 8 大官方正版高精度矢量标志矩阵 -->
+        <div class="platform-grid">
+            <!-- 1. OnlyFans (带翅膀的正版 of 图标) -->
+            <a href="https://onlyfans.com" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg c-of-shd">
+                    <svg viewBox="0 0 100 100" width="32" height="32">
+                        <path d="M45,25 C31,25 20,36 20,50 C20,64 31,75 45,75 C53,75 60,71 65,65 L54,58 C52,61 49,63 45,63 C38,63 32,57 32,50 C32,43 38,37 45,37 C49,37 52,39 54,42 L65,35 C60,29 53,25 45,25 Z" fill="#008ee6"/>
+                        <path d="M53,46 C56,40 61,33 70,30 C76,28 83,29 83,29 C83,29 78,35 76,41 C74,47 76,51 81,54 C85,56 90,56 90,56 C90,56 83,62 77,63 C70,64 64,60 60,54 L53,46 Z" fill="#00a2ed"/>
+                    </svg>
+                </div>
+                <div class="platform-name">OnlyFans</div>
+            </a>
+
+            <!-- 2. Myfans (正版红粉拼色开锁图标) -->
+            <a href="https://myfans.jp" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg c-mf-shd">
+                    <svg viewBox="0 0 100 100" width="30" height="30">
+                        <path d="M50,38 C42,38 35,45 35,53 C35,62 42,69 50,69 C58,69 65,62 65,53 C65,45 58,38 50,38 Z M50,59 C47,59 45,56 45,53 C45,50 47,48 50,48 C53,48 55,50 55,53 C55,56 53,59 50,59 Z" fill="#ff3a69"/>
+                        <path d="M65,42 L65,28 C65,20 58,13 50,13 C42,13 35,20 35,28 L45,28 C45,25 47,23 50,23 C53,23 55,25 55,28 L55,42 Z" fill="#ff3a69"/>
+                    </svg>
+                </div>
+                <div class="platform-name">Myfans</div>
+            </a>
+
+            <!-- 3. Fansone (正版萌系卡通大笑朱哥图标) -->
+            <a href="https://fansone.co" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg">
+                    <svg viewBox="0 0 100 100" width="32" height="32">
+                        <rect x="25" y="15" width="50" height="60" rx="25" fill="none" stroke="#4a5568" stroke-width="6"/>
+                        <path d="M25,50 L12,50 C12,42 16,36 22,36" fill="none" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
+                        <path d="M75,50 L88,50 C88,42 84,36 78,36" fill="none" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="40" cy="36" r="4" fill="#4a5568"/>
+                        <circle cx="60" cy="36" r="4" fill="#4a5568"/>
+                        <circle cx="31" cy="42" r="3" fill="#ff8da1"/>
+                        <circle cx="69" cy="42" r="3" fill="#ff8da1"/>
+                        <path d="M37,46 C37,56 63,56 63,46 Z" fill="#ff7675" stroke="#4a5568" stroke-width="4" stroke-linejoin="round"/>
+                        <path d="M42,51 C46,55 54,55 58,51" fill="none" stroke="#ffb8b8" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M35,75 C40,82 60,82 65,75" fill="none" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="platform-name">Fansone</div>
+            </a>
+
+            <!-- 4. Loyalfans (正版红色胜利 Y 字小人图标) -->
+            <a href="https://loyalfans.com" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg">
+                    <svg viewBox="0 0 100 100" width="30" height="30">
+                        <circle cx="50" cy="22" r="10" fill="#e60039"/>
+                        <path d="M50,44 C45,44 26,26 16,32 C12,34 32,56 42,66 L42,90 L58,90 L58,66 C68,56 88,34 84,32 C74,26 55,44 50,44 Z" fill="#e60039"/>
+                    </svg>
+                </div>
+                <div class="platform-name">Loyalfans</div>
+            </a>
+
+            <!-- 5. Fantia (正版复古像素拼色英文字体图标) -->
+            <a href="https://fantia.jp" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg">
+                    <svg viewBox="0 0 150 45" width="55" height="24">
+                        <text x="0" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#8bc34a" letter-spacing="1">F</text>
+                        <text x="24" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#e91e63" letter-spacing="1">a</text>
+                        <text x="46" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#9c27b0" letter-spacing="1">n</text>
+                        <text x="72" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#00bcd4" letter-spacing="1">t</text>
+                        <text x="92" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#3f51b5" letter-spacing="1">i</text>
+                        <text x="108" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#ff5722" letter-spacing="1">a</text>
+                    </svg>
+                </div>
+                <div class="platform-name">Fantia</div>
+            </a>
+
+            <!-- 6. Manyvids (正版粉红皇冠锁孔爱心图标) -->
+            <a href="https://manyvids.com" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg c-mv-shd">
+                    <svg viewBox="0 0 100 100" width="34" height="34">
+                        <path d="M50,22 C56,13 66,7 78,7 C93,7 105,19 105,34 C105,53 82,75 54,96 L50,100 L46,96 C18,75 -5,53 -5,34 C-5,19 7,7 22,7 C34,7 44,13 50,22 Z" fill="#ff2a73" transform="scale(0.7) translate(22, 40)"/>
+                        <path d="M50,56 C46.7,56 44,58.7 44,62 C44,64.3 45.3,66.3 47.2,67.3 L45,76 L55,76 L52.8,67.3 C54.7,66.3 56,64.3 56,62 C56,58.7 53.3,56 50,56 Z" fill="#ffffff"/>
+                        <circle cx="50" cy="61" r="2.5" fill="#ff2a73"/>
+                        <path d="M30,30 L38,42 L50,28 L62,42 L70,30 L66,50 L34,50 Z" fill="#ff2a73"/>
+                        <circle cx="30" cy="28" r="2.5" fill="#ff2a73"/><circle cx="50" cy="25" r="2.5" fill="#ff2a73"/><circle cx="70" cy="28" r="2.5" fill="#ff2a73"/>
+                    </svg>
+                </div>
+                <div class="platform-name">Manyvids</div>
+            </a>
+
+            <!-- 7. Fansly (正版天蓝爱心镜头密码锁图标) -->
+            <a href="https://fansly.com" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg c-fly-shd">
+                    <svg viewBox="0 0 100 100" width="30" height="30">
+                        <path d="M50,88 C34,74 15,55 15,36 C15,22 25,12 38,12 C46,12 51,18 54,23 L62,34 L73,21 C76,17 81,12 88,12 C99,12 107,22 107,36 C107,46 99,57 88,67 L57,90" fill="none" stroke="#0066ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" transform="translate(-6, 2) scale(0.9)"/>
+                        <circle cx="50" cy="53" r="8" fill="#0066ff" />
+                        <circle cx="53" cy="50" r="2.5" fill="#ffffff" />
+                    </svg>
+                </div>
+                <div class="platform-name">Fansly</div>
+            </a>
+
+            <!-- 8. Justforfans (正版圆角重工业 JFF 粗体黑底白字图标) -->
+            <a href="https://justfor.fans" target="_blank" class="platform-card">
+                <div class="platform-logo c-logo-svg">
+                    <svg viewBox="0 0 100 100" width="32" height="32">
+                        <rect x="5" y="15" width="90" height="70" rx="14" fill="#000000"/>
+                        <text x="50" y="63" font-family="'Arial', 'Helvetica', sans-serif" font-weight="900" font-size="46" fill="#ffffff" text-anchor="middle" letter-spacing="-2">JFF</text>
+                    </svg>
+                </div>
+                <div class="platform-name">Justforfans</div>
+            </a>
+        </div>
+
+        <!-- 四大保障 -->
+        <div class="features-box">
+            <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <div class="feature-text"><div>安全保障</div><div>隐私保护 账号无忧</div></div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🪙</span>
+                <div class="feature-text"><div>价格优惠</div><div>低至官方价 更省心</div></div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <div class="feature-text"><div>快速稳定</div><div>极速开通 即订即享</div></div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎧</span>
+                <div class="feature-text"><div>售后无忧</div><div>贴心服务 24h在线</div></div>
+            </div>
+        </div>
+
+        <!-- 双营销卡片 -->
+        <div class="promo-section">
+            <div class="promo-left">
+                <h4>你想看的，这里都能订！</h4>
+                <p>支持更多平台，欢迎咨询定制~</p>
+            </div>
+            <div class="promo-right">
+                <h4>专业代订团队</h4>
+                <p>专注海外订阅服务</p>
+                <div class="promo-tag">让喜欢的创作者，触手可及！</div>
+            </div>
+        </div>
+
+        <div class="web-url-tips">🌐 访问主页了解避坑技巧：<span>https://pphoting.com/</span></div>
+
+        <!-- 重要提醒区 -->
+        <div class="notice-box">
+            <div class="notice-title">📢 重要提醒：</div>
+            <div class="notice-item"><span class="notice-num">1、</span>各平台充值订阅一条龙服务，无需购卡，无需注册账号。客服操作，千人群不怕掉坑。付不上的平台秒退款。</div>
+            <div class="notice-item"><span class="notice-num">2、</span>部分网站的视频可以下载，下载软件购买方式可见QQ群公告。</div>
+        </div>
+
+        <div class="section-title">⚪ 充值订阅，联系客服，实时操作</div>
+        <!-- QQ群复制 -->
+        <div class="qq-group-box">
+            <div class="qq-group-title">⚪ 官方交流QQ群（点击可复制群号）</div>
+            <div class="qq-group-list">
+                <span class="qq-num-btn" onclick="copyText('176334157', 'Q群1已成功复制：176334157')">Q群1: 176334157</span>
+                <span class="qq-divider">|</span> 
+                <span class="qq-num-btn" onclick="copyText('785539596', 'Q群2已成功复制：785539596')">Q群2: 785539596</span>
+                <span class="qq-divider">|</span> 
+                <span class="qq-num-btn" onclick="copyText('812317571', 'Q群3已成功复制：812317571')">Q群3: 812317571</span>
+            </div>
+        </div>
+
+        <!-- 客服按钮 -->
+        <div class="contact-card">
+            <a href="weixin://" class="btn btn-wechat" onclick="copyText('CNpphot', '微信客服号已成功复制：CNpphot \n\n请打开微信，点击右上角加号【添加朋友】直接粘贴搜索！')">
+                🟢 微信客服：CNpphot (点击复制)
+            </a>
+            <a href="tencent://message/?uin=3574846492&Site=客服&Menu=yes" class="btn btn-qq" target="_blank">
+                🔵 QQ群管理员1：3574846492 (发起聊天)
+            </a>
+            <a href="tencent://message/?uin=3654697656&Site=客服&Menu=yes" class="btn btn-qq" target="_blank">
+                🔵 QQ群管理员2：3654697656 (发起聊天)
+            </a>
+            <a href="https://t.me" class="btn btn-tg" target="_blank" onclick="copyText('t.me/my1girls', '频道用户名已成功复制：t.me/my1girls')">
+                🔷 Telegram 客服 (https://t.me/my1girls)
+            </a>
+        </div>
+
+         <!-- 各网站直达链接模块（纯域名，居中对齐版） -->
+        <div class="direct-links-box">
+            <div class="links-title">🔗 各网站直达链接</div>
+            <div class="links-grid">
+                <a href="https://onlyfans.com" target="_blank" class="direct-url">onlyfans.com</a>
+                <a href="https://fansone.co" target="_blank" class="direct-url">fansone.co</a>
+                <a href="https://myfans.jp" target="_blank" class="direct-url">myfans.jp</a>
+                <a href="https://justfor.fans" target="_blank" class="direct-url">justfor.fans</a>
+                <a href="https://fansly.com" target="_blank" class="direct-url">fansly.com</a>
+                <a href="https://fantia.jp" target="_blank" class="direct-url">fantia.jp</a>
+                <a href="https://myfans.asia" target="_blank" class="direct-url">myfans.asia</a>
+                <a href="https://loyalfans.com" target="_blank" class="direct-url">loyalfans.com</a>
+                <a href="https://fanvue.com" target="_blank" class="direct-url">fanvue.com</a>
+                <a href="https://clips4sale.com" target="_blank" class="direct-url">clips4sale.com</a>
+                <a href="https://manyvids.com" target="_blank" class="direct-url">manyvids.com</a>
+                <a href="https://velvetsfantasies.com" target="_blank" class="direct-url">velvetsfantasies.com</a>
+            </div>
+        </div>
+
+        <!-- 留言板 -->
+        <div class="message-board">
+            <div class="message-title">📝 上面没有列出的网站，也可实时充值订阅，留言或直接联系QQ客服。</div>
+            <form onsubmit="handleMailSubmit(event)">
+                <div class="form-group">
+                    <input type="text" id="contact_info" class="form-input" placeholder="怎么称呼您？/ 您的联系QQ或微信（可以不填）">
+                </div>
+                <div class="form-group">
+                    <textarea id="message_content" class="form-textarea" placeholder="请写下您需要代阅的网站名称或具体链接..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交留言</button>
+         <!-- ✨ 核心新增：在提交留言按钮下方、卡片边缘内插入自适应新图片 -->
+        <div style="width: 100%; text-align: center; margin-top: 15px;">
+            <img src="bottom-banner.jpg" alt="宣传图" style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;" onerror="this.style.display='none'">
+        </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            © 2026  www.pphoting.com. 专业团队. 安全保障. 明盘操作. 全网唯一.
+        </div>
+    </div>
+</div>
+
+<script>
+    // 现代安全剪贴板核心复制逻辑
+    function copyText(text, alertMsg) {
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(text).then(() => { 
+                alert(alertMsg); 
+            }).catch(() => {
+                fallbackCopy(text, alertMsg);
+            });
+        } else {
+            fallbackCopy(text, alertMsg);
+        }
+    }
+
+    // 老旧版本浏览器降级兼容复制
+    function fallbackCopy(text, alertMsg) {
+        var tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert(alertMsg);
+    }
+
+    // 留言需求自动组装邮件发送逻辑
+    function handleMailSubmit(event) {
+        event.preventDefault();
+        var contact = document.getElementById("contact_info").value;
+        var content = document.getElementById("message_content").value;
+        var emailTo = "3654697656@qq.com";
+        var subject = encodeURIComponent("【代阅服务】新留言需求！");
+        var bodyText = "客户联系方式：" + (contact ? contact : "（未填写）") + "\r\n\r\n" + "所需网站或意见：\r\n" + content;
+        window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + encodeURIComponent(bodyText);
+    }
+</script>
+</body>
+</html>
