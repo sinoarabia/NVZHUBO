@@ -38,12 +38,12 @@
             background-color: var(--primary-bg); 
             color: var(--text-dark); 
             line-height: 1.5; 
-            padding: 15px 10px; 
-            /* 已经彻底移除了侧边的丑陋火柴人代码 */
+            padding: 20px 10px; 
         }
 
         .container {
-            max-width: 550px; 
+            /* ⭐ 核心修改：将宽度从 550px 放宽到 850px，提升电脑端视觉体验 */
+            max-width: 850px; 
             margin: 0 auto; 
             background: #fff; 
             border-radius: 24px; 
@@ -51,13 +51,12 @@
             overflow: hidden; 
         }
         
-        /* 头部排版视觉区 (恢复干净的渐变，或者您以后放真图) */
+        /* 头部排版视觉区 */
         .header-banner {
-            /* 如果您以后有好看的真实背景图，可以把 url('您的图片.png') 加上去 */
             background: linear-gradient(180deg, #ffeef1 0%, #ffffff 100%);
             background-size: cover;
             background-position: center;
-            padding: 30px 20px 15px 20px;
+            padding: 40px 20px 20px 20px;
             text-align: center;
             border-bottom: 1px solid #ffe3e8;
             border-radius: 24px 24px 0 0;
@@ -67,47 +66,47 @@
             display: inline-block;
             background-color: var(--primary-color);
             color: #fff;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: bold;
-            padding: 4px 15px;
+            padding: 6px 18px;
             border-radius: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         .main-title {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 900;
             color: #212529;
             line-height: 1.2;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             letter-spacing: 1px;
         }
         .sub-title {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
             color: #333;
             margin-bottom: 15px;
         }
         .tagline {
-            font-size: 13px;
+            font-size: 15px;
             color: #666;
             font-weight: 600;
         }
-        .tagline span { color: var(--primary-color); margin: 0 3px; }
+        .tagline span { color: var(--primary-color); margin: 0 5px; }
 
-        .content-body { padding: 0 20px 25px 20px; }
+        .content-body { padding: 0 30px 30px 30px; }
 
         /* 8大平台矩阵与矢量LOGO专属对齐配置 */
         .platform-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 20px 0;
+            gap: 15px;
+            margin: 25px 0;
         }
         .platform-card {
             background: #ffffff;
             border: 1px solid #f1f3f5;
             border-radius: 14px;
-            padding: 14px 6px;
+            padding: 18px 6px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -118,19 +117,19 @@
             transition: all 0.2s ease;
         }
         .platform-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 75, 114, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 75, 114, 0.1);
             border-color: #ffe3e8;
         }
         .platform-logo {
-            margin-bottom: 6px;
-            height: 32px;
+            margin-bottom: 8px;
+            height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .platform-name { 
-            font-size: 11px; 
+            font-size: 12px; 
             font-weight: 700; 
             color: #6c757d; 
             letter-spacing: 0.2px;
@@ -142,66 +141,67 @@
         .c-mf-shd { filter: drop-shadow(0 2px 4px rgba(255, 58, 105, 0.15)); }
         .c-fly-shd { filter: drop-shadow(0 2px 4px rgba(0, 102, 255, 0.15)); }
         .c-mv-shd { filter: drop-shadow(0 2px 4px rgba(255, 42, 115, 0.15)); }
+        
         /* 四大保障标签 */
         .features-box {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 25px;
         }
         .feature-item {
             background: #fff5f6;
             border: 1px solid #ffe3e7;
-            border-radius: 10px;
-            padding: 8px 10px;
+            border-radius: 12px;
+            padding: 12px 15px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
         }
-        .feature-icon { font-size: 16px; }
-        .feature-text div:first-child { font-size: 12px; font-weight: bold; color: #d63384; }
-        .feature-text div:last-child { font-size: 10px; color: #868e96; }
+        .feature-icon { font-size: 20px; }
+        .feature-text div:first-child { font-size: 14px; font-weight: bold; color: #d63384; }
+        .feature-text div:last-child { font-size: 12px; color: #868e96; }
 
         /* 营销宣传双卡片 */
         .promo-section {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
         .promo-left {
             background-color: var(--primary-color);
             color: #fff;
             border-radius: 14px;
-            padding: 12px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-        .promo-left h4 { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
-        .promo-left p { font-size: 11px; opacity: 0.9; }
+        .promo-left h4 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+        .promo-left p { font-size: 13px; opacity: 0.9; }
         .promo-right {
             background-color: #fef7ec;
             border: 1px solid #fbe6c4;
             color: #795548;
             border-radius: 14px;
-            padding: 12px;
+            padding: 18px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-        .promo-right h4 { font-size: 13px; font-weight: 800; color: #5d4037; }
-        .promo-right p { font-size: 10px; color: #8d6e63; margin-bottom: 4px; }
-        .promo-tag { background: var(--primary-color); color: #fff; font-size: 9px; padding: 1px 6px; border-radius: 10px; font-weight: bold; }
+        .promo-right h4 { font-size: 15px; font-weight: 800; color: #5d4037; }
+        .promo-right p { font-size: 12px; color: #8d6e63; margin-bottom: 6px; }
+        .promo-tag { background: var(--primary-color); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
 
         .web-url-tips {
             text-align: center;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: bold;
             color: #495057;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .web-url-tips span { color: var(--primary-color); }
 
@@ -210,37 +210,39 @@
             background-color: #fff5f6;
             border: 2px solid #ffe3e7;
             border-left: 5px solid var(--primary-color);
-            padding: 15px;
+            padding: 20px;
             border-radius: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(255, 75, 114, 0.04);
         }
-        .notice-title { font-size: 14px; font-weight: 800; color: #d63384; margin-bottom: 10px; }
-        .notice-item { background: #ffffff; padding: 10px; border-radius: 8px; font-size: 12.5px; color: #495057; line-height: 1.5; margin-bottom: 8px; border: 1px solid #ffe3e7; }
+        .notice-title { font-size: 16px; font-weight: 800; color: #d63384; margin-bottom: 12px; }
+        .notice-item { background: #ffffff; padding: 12px 15px; border-radius: 8px; font-size: 14px; color: #495057; line-height: 1.6; margin-bottom: 10px; border: 1px solid #ffe3e7; }
         .notice-item:last-child { margin-bottom: 0; }
         .notice-num { color: var(--primary-color); font-weight: bold; }
 
-        .section-title { font-size: 14px; font-weight: bold; margin-bottom: 15px; color: #666; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .section-title { font-size: 16px; font-weight: bold; margin-bottom: 18px; color: #666; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px; }
 
         /* QQ群群组卡片 */
         .qq-group-box {
             border: 1px solid #ffccd5;
             background: #fff5f6;
             border-radius: 14px;
-            padding: 15px 10px;
-            margin-bottom: 20px;
+            padding: 18px 15px;
+            margin-bottom: 25px;
             text-align: center;
         }
-        .qq-group-title { font-size: 13px; font-weight: bold; color: #ff4b72; margin-bottom: 12px; }
-        .qq-group-list { display: flex; justify-content: center; align-items: center; gap: 4px; }
-        .qq-num-btn { background-color: #f0f7ff; color: #0056b3; font-weight: bold; font-size: 12px; padding: 5px 8px; border-radius: 6px; border: 1px solid #cce3ff; cursor: pointer; }
+        .qq-group-title { font-size: 15px; font-weight: bold; color: #ff4b72; margin-bottom: 15px; }
+        .qq-group-list { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .qq-num-btn { background-color: #f0f7ff; color: #0056b3; font-weight: bold; font-size: 14px; padding: 8px 12px; border-radius: 8px; border: 1px solid #cce3ff; cursor: pointer; transition: all 0.2s; }
+        .qq-num-btn:hover { background-color: #e0f0ff; }
         .qq-num-btn:active { background-color: #cce3ff; }
-        .qq-divider { color: #ffccd5; font-size: 12px; }
+        .qq-divider { color: #ffccd5; font-size: 14px; }
 
         /* 客服联络卡片 */
-        .contact-card { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
-        .btn { display: flex; align-items: center; justify-content: center; padding: 14px; border-radius: 10px; font-weight: bold; text-decoration: none; color: #fff; font-size: 15px; border: none; cursor: pointer; width: 100%; }
-        .btn:active { transform: scale(0.99); opacity: 0.9; }
+        .contact-card { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; border-radius: 12px; font-weight: bold; text-decoration: none; color: #fff; font-size: 16px; border: none; cursor: pointer; width: 100%; transition: all 0.2s; }
+        .btn:hover { opacity: 0.95; transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn:active { transform: scale(0.99); opacity: 0.9; box-shadow: none; }
         .btn-wechat { background-color: var(--success-color); }
         .btn-qq { background-color: var(--qq-color); }
         .btn-tg { background-color: var(--tg-color); }
@@ -249,29 +251,29 @@
         .direct-links-box {
             background-color: #ffffff;
             border: 1px solid #ffe3e8;
-            padding: 18px;
+            padding: 22px;
             border-radius: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             box-shadow: 0 4px 12px rgba(255, 75, 114, 0.02);
         }
         .links-title { 
-            font-size: 13.5px; 
+            font-size: 15px; 
             font-weight: bold; 
             color: #d63384; 
-            margin-bottom: 15px; 
+            margin-bottom: 18px; 
             text-align: center; 
         }
         .links-grid { 
             display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 12px 20px; 
+            grid-template-columns: repeat(3, 1fr); /* 电脑端默认为3列，更显饱满 */
+            gap: 15px 25px; 
         }
         .direct-url { 
-            font-size: 13px; 
+            font-size: 14px; 
             color: #0056b3; 
             text-decoration: none; 
             font-weight: 500; 
-            padding-bottom: 6px; 
+            padding-bottom: 8px; 
             text-align: center; 
             border-bottom: 1px dashed #f1f3f5; 
             transition: all 0.2s ease;
@@ -286,15 +288,28 @@
         }
 
         /* 留言反馈表单样式 */
-        .message-board { background-color: #fdf8f9; border: 1px solid #ffe3e8; padding: 18px; border-radius: 14px; }
-        .message-title { font-size: 13px; font-weight: bold; color: #d63384; margin-bottom: 12px; text-align: center; }
-        .form-group { margin-bottom: 10px; }
-        .form-input, .form-textarea { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 8px; font-size: 13px; outline: none; }
+        .message-board { background-color: #fdf8f9; border: 1px solid #ffe3e8; padding: 22px; border-radius: 14px; }
+        .message-title { font-size: 15px; font-weight: bold; color: #d63384; margin-bottom: 15px; text-align: center; }
+        .form-group { margin-bottom: 12px; }
+        .form-input, .form-textarea { width: 100%; padding: 12px; border: 1px solid #ced4da; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s; }
         .form-input:focus, .form-textarea:focus { border-color: var(--primary-color); }
-        .form-textarea { resize: vertical; min-height: 70px; font-family: inherit; }
-        .submit-btn { background-color: var(--primary-color); color: #fff; border: none; padding: 11px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; width: 100%; }
+        .form-textarea { resize: vertical; min-height: 80px; font-family: inherit; }
+        .submit-btn { background-color: var(--primary-color); color: #fff; border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; width: 100%; transition: all 0.2s; }
+        .submit-btn:hover { background-color: #e6395e; }
 
-        .footer { text-align: center; font-size: 11px; color: #adb5bd; margin-top: 25px; border-top: 1px solid #ffe3e8; padding-top: 15px; }
+        .footer { text-align: center; font-size: 13px; color: #adb5bd; margin-top: 30px; border-top: 1px solid #ffe3e8; padding-top: 20px; }
+
+        /* ====== 智能手机端响应式排版 ====== */
+        @media (max-width: 600px) {
+            .container { border-radius: 16px; }
+            .content-body { padding: 0 15px 20px 15px; }
+            .main-title { font-size: 28px; }
+            .sub-title { font-size: 20px; }
+            /* 手机上两列展示网址更清晰 */
+            .links-grid { grid-template-columns: repeat(2, 1fr); } 
+            .promo-section { grid-template-columns: 1fr; }
+            .features-box { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
