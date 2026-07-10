@@ -48,12 +48,11 @@
             overflow: hidden;
         }
         
-        /* 头部排版视觉区 (纯代码 SVG 抽象轮廓线条背景) */
+        /* 头部排版视觉区 (高对比度纯代码 SVG 线条背景) */
         .header-banner {
-            /* 半透明渐变遮罩 + 纯代码内联 SVG 优美轮廓线条 */
-            background: 
-                linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 241, 243, 0.95)),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- 轮廓线组 1 --%3E%3Cpath d='M-50 250 C 150 100, 250 350, 450 200 S 650 350, 850 150' stroke='%23ffb3c6' stroke-width='4' opacity='0.6'/%3E%3C!-- 轮廓线组 2 --%3E%3Cpath d='M0 350 C 200 50, 300 400, 550 150 S 750 300, 900 200' stroke='%23ffccd5' stroke-width='2' opacity='0.8'/%3E%3C!-- 轮廓线组 3 --%3E%3Cpath d='M-100 150 C 100 350, 350 50, 500 250 S 700 50, 850 300' stroke='%23ff8fa3' stroke-width='1.5' opacity='0.5'/%3E%3C!-- 轮廓线组 4 --%3E%3Cpath d='M100 450 C 250 200, 400 350, 600 100 S 750 250, 850 50' stroke='%23ffc2d1' stroke-width='3' opacity='0.7'/%3E%3C!-- 点缀的抽象圆形 --%3E%3Ccircle cx='150' cy='180' r='15' stroke='%23ffb3c6' stroke-width='2' opacity='0.5'/%3E%3Ccircle cx='450' cy='280' r='10' stroke='%23ffccd5' stroke-width='2' opacity='0.6'/%3E%3Ccircle cx='680' cy='120' r='20' stroke='%23ff8fa3' stroke-width='1' opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 241, 243, 0.85)),
+                url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA4MDAgNDAwJz48ZyBmaWxsPSdub25lJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnPjxwYXRoIGQ9J00tNTAgMjUwIEMgMTUwIDEwMCwgMjUwIDM1MCwgNDUwIDIwMCBTIDY1MCAzNTAsIDg1MCAxNTAnIHN0cm9rZT0nI2ZmOGRhMScgc3Ryb2tlLXdpZHRoPSc2JyBvcGFjaXR5PScwLjgnLz48cGF0aCBkPSdNMCAzNTAgQyAyMDAgNTAsIDMwMCA0MDAsIDU1MCAxNTAgUyA3NTAgMzAwLCA5MDAgMjAwJyBzdHJva2U9JyNmZjc2NzUnIHN0cm9rZS13aWR0aD0nNCcgb3BhY2l0eT0nMC44Jy8+PHBhdGggZD0nTS0xMDAgMTUwIEMgMTAwIDM1MCwgMzUwIDUwLCA1MDAgMjUwIFMgNzAwIDUwLCA4NTAgMzAwJyBzdHJva2U9JyNkNjMzODQnIHN0cm9rZS13aWR0aD0nMycgb3BhY2l0eT0nMC42Jy8+PHBhdGggZD0nTTEwMCA0NTAgQyAyNTAgMjAwLCA0MDAgMzUwLCA2MDAgMTAwIFMgNzUwIDI1MCwgODUwIDUwJyBzdHJva2U9JyNmZmI4YjgnIHN0cm9rZS13aWR0aD0nNScgb3BhY2l0eT0nMC45Jy8+PGNpcmNsZSBjeD0nMTUwJyBjeT0nMTgwJyByPScxNScgc3Ryb2tlPScjZmY4ZGExJyBzdHJva2Utd2lkdGg9JzMnIG9wYWNpdHk9JzAuNycvPjxjaXJjbGUgY3g9JzQ1MCcgY3k9JzI4MCcgcj0nMTAnIHN0cm9rZT0nI2ZmNzY3NScgc3Ryb2tlLXdpZHRoPSczJyBvcGFjaXR5PScwLjgnLz48Y2lyY2xlIGN4PSc2ODAnIGN5PScxMjAnIHI9JzIwJyBzdHJva2U9JyNkNjMzODQnIHN0cm9rZS13aWR0aD0nMicgb3BhY2l0eT0nMC41Jy8+PC9nPjwvc3ZnPg==");
             background-size: cover;
             background-position: center top;
             padding: 30px 20px 15px 20px;
