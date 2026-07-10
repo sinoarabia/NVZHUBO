@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- ==================== SEO 优化配置开始 ==================== -->
     <title>海外多平台无需购卡充值订阅服务 | OnlyFans/Fansly/Fantia/Myfans/Fansone/Loyalfans等多平台实时操作 - nvzhubo.shop</title>
     <meta name="description" content="专业提供OnlyFans、Fansly、Fantia、Myfans、Justforfans等海外优质内容多平台代充、代订阅服务。安全可靠，无需您注册账号，极速开通，24小时客服售后无忧。">
     <meta name="keywords" content="代充, 代订阅, OnlyFans代充, Fansly订阅, Fantia代充, Myfans代充, 海外视频代订阅, nvzhubo.shop">
@@ -10,11 +11,15 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nvzhubo.shop/">
     
+    <!-- Open Graph (社交平台分享卡片优化) -->
     <meta property="og:title" content="一站式多平台代充代订服务 - 轻松解锁全球优质内容">
     <meta property="og:description" content="专业海外平台代订阅：OnlyFans、Fansly、Fantia等。安全免注册，低至官方价，极速开通，售后无忧。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nvzhubo.shop/">
     <meta property="og:site_name" content="多平台代订阅服务">
+    <!-- ==================== SEO 优化配置结束 ==================== -->
+
+    <!-- 优化：外部高效小图标 -->
     <link rel="icon" href="https://pages.dev">
     
     <style>
@@ -27,20 +32,54 @@
             --text-dark: #212529;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-dark);
-            line-height: 1.5;
-            padding: 15px 10px;
+            background-color: var(--primary-bg); /*[cite: 1] */
+            color: var(--text-dark); /*[cite: 1] */
+            line-height: 1.5; /*[cite: 1] */
+            padding: 15px 10px; /*[cite: 1] */
+            position: relative; /* 为两侧的背景线条做定位基准 */
+            overflow-x: hidden;
         }
+
+        /* ==================== 侧边绿色粗体人体线条画 (智能响应式：仅大屏显示) ==================== */
+        @media (min-width: 1100px) {
+            body::before, body::after {
+                content: "";
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 250px;
+                height: 700px;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0.8; /* 保证透明度足够清晰 */
+                z-index: -1; /* 置于底层，不影响任何按钮点击 */
+            }
+            
+            /* 左侧线条：绘制女、男、女 */
+            body::before {
+                left: calc(50% - 550px); /* 完美避开中间550px宽的主体容器 */
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 700'%3E%3Cg fill='none' stroke='%23008000' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Female 1 --%3E%3Ccircle cx='70' cy='120' r='22'/%3E%3Cpath d='M25 400 L55 210 Q70 160 85 210 L115 400 M55 210 L30 290 M85 210 L110 290'/%3E%3C!-- Male 1 --%3E%3Ccircle cx='180' cy='280' r='22'/%3E%3Cpath d='M140 560 L160 370 Q180 320 200 370 L220 560 M160 370 L135 450 M200 370 L225 450'/%3E%3C!-- Female 2 --%3E%3Ccircle cx='60' cy='450' r='22'/%3E%3Cpath d='M15 730 L45 540 Q60 490 75 540 L105 730 M45 540 L20 620 M75 540 L100 620'/%3E%3C/g%3E%3C/svg%3E");
+            }
+
+            /* 右侧线条：绘制男、女、男 */
+            body::after {
+                right: calc(50% - 550px); /* 完美避开中间550px宽的主体容器 */
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 700'%3E%3Cg fill='none' stroke='%23008000' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Male 1 --%3E%3Ccircle cx='180' cy='150' r='22'/%3E%3Cpath d='M140 430 L160 240 Q180 190 200 240 L220 430 M160 240 L135 320 M200 240 L225 320'/%3E%3C!-- Female 1 --%3E%3Ccircle cx='70' cy='320' r='22'/%3E%3Cpath d='M25 600 L55 410 Q70 360 85 410 L115 600 M55 410 L30 490 M85 410 L110 490'/%3E%3C!-- Male 2 --%3E%3Ccircle cx='170' cy='480' r='22'/%3E%3Cpath d='M130 760 L150 570 Q170 520 190 570 L210 760 M150 570 L125 650 M190 570 L215 650'/%3E%3C/g%3E%3C/svg%3E");
+            }
+        }
+        /* ========================================================================================= */
+
         .container {
-            max-width: 550px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(255, 75, 114, 0.12);
-            overflow: hidden;
+            max-width: 550px; /*[cite: 1] */
+            margin: 0 auto; /*[cite: 1] */
+            background: #fff; /*[cite: 1] */
+            border-radius: 24px; /*[cite: 1] */
+            box-shadow: 0 10px 30px rgba(255, 75, 114, 0.12); /*[cite: 1] */
+            overflow: hidden; /*[cite: 1] */
         }
         
         /* 头部排版视觉区 (5男5女绿色加粗人体线条背景) */
@@ -293,6 +332,7 @@
 <body>
 
 <div class="container">
+    <!-- 顶部排版区 -->
     <div class="header-banner">
         <div class="badge-top">一站式代订阅服务</div>
         <h1 class="main-title">多平台代订阅</h1>
@@ -300,7 +340,9 @@
         <div class="tagline"><span>♥</span> 安全可靠 <span>|</span> 无坑无骗 <span>|</span> 订阅无忧 <span>♥</span></div>
     </div>
     <div class="content-body">
+        <!-- 1:1 像素级还原 8 大官方正版高精度矢量标志矩阵 -->
         <div class="platform-grid">
+            <!-- 1. OnlyFans (带翅膀的正版 of 图标) -->
             <a href="https://onlyfans.com" target="_blank" class="platform-card" title="OnlyFans代充代订阅">
                 <div class="platform-logo c-logo-svg c-of-shd">
                     <svg viewBox="0 0 100 100" width="32" height="32">
@@ -311,6 +353,7 @@
                 <div class="platform-name">OnlyFans</div>
             </a>
 
+            <!-- 2. Myfans (正版红粉拼色开锁图标) -->
             <a href="https://myfans.jp" target="_blank" class="platform-card" title="Myfans代充代订阅">
                 <div class="platform-logo c-logo-svg c-mf-shd">
                     <svg viewBox="0 0 100 100" width="30" height="30">
@@ -321,6 +364,7 @@
                 <div class="platform-name">Myfans</div>
             </a>
 
+            <!-- 3. Fansone (正版萌系卡通大笑朱哥图标) -->
             <a href="https://fansone.co" target="_blank" class="platform-card" title="Fansone代充代订阅">
                 <div class="platform-logo c-logo-svg">
                     <svg viewBox="0 0 100 100" width="32" height="32">
@@ -339,6 +383,7 @@
                 <div class="platform-name">Fansone</div>
             </a>
 
+            <!-- 4. Loyalfans (正版红色胜利 Y 字小人图标) -->
             <a href="https://loyalfans.com" target="_blank" class="platform-card" title="Loyalfans代充代订阅">
                 <div class="platform-logo c-logo-svg">
                     <svg viewBox="0 0 100 100" width="30" height="30">
@@ -349,6 +394,7 @@
                 <div class="platform-name">Loyalfans</div>
             </a>
 
+            <!-- 5. Fantia (正版复古像素拼色英文字体图标) -->
             <a href="https://fantia.jp" target="_blank" class="platform-card" title="Fantia代充代订阅">
                 <div class="platform-logo c-logo-svg">
                     <svg viewBox="0 0 150 45" width="55" height="24">
@@ -363,6 +409,7 @@
                 <div class="platform-name">Fantia</div>
             </a>
 
+            <!-- 6. Manyvids (正版粉红皇冠锁孔爱心图标) -->
             <a href="https://manyvids.com" target="_blank" class="platform-card" title="Manyvids代充代订阅">
                 <div class="platform-logo c-logo-svg c-mv-shd">
                     <svg viewBox="0 0 100 100" width="34" height="34">
@@ -376,6 +423,7 @@
                 <div class="platform-name">Manyvids</div>
             </a>
 
+            <!-- 7. Fansly (正版天蓝爱心镜头密码锁图标) -->
             <a href="https://fansly.com" target="_blank" class="platform-card" title="Fansly代充代订阅">
                 <div class="platform-logo c-logo-svg c-fly-shd">
                     <svg viewBox="0 0 100 100" width="30" height="30">
@@ -387,6 +435,7 @@
                 <div class="platform-name">Fansly</div>
             </a>
 
+            <!-- 8. Justforfans (正版圆角重工业 JFF 粗体黑底白字图标) -->
             <a href="https://justfor.fans" target="_blank" class="platform-card" title="Justforfans代充代订阅">
                 <div class="platform-logo c-logo-svg">
                     <svg viewBox="0 0 100 100" width="32" height="32">
@@ -398,6 +447,7 @@
             </a>
         </div>
 
+        <!-- 四大保障 -->
         <div class="features-box">
             <div class="feature-item">
                 <span class="feature-icon">🛡️</span>
@@ -417,6 +467,7 @@
             </div>
         </div>
 
+        <!-- 双营销卡片 -->
         <div class="promo-section">
             <div class="promo-left">
                 <h4>你想看的，这里都能订！</h4>
@@ -431,6 +482,7 @@
 
         <div class="web-url-tips">🌐 访问主页了解避坑技巧：<span>https://pphoting.com/</span></div>
 
+        <!-- 重要提醒区 -->
         <div class="notice-box">
             <div class="notice-title">📢 重要提醒：</div>
             <div class="notice-item"><span class="notice-num">1、</span>各平台充值订阅一条龙服务，无需购卡，无需注册账号。客服操作，千人群不怕掉坑。付不上的平台秒退款。</div>
@@ -438,6 +490,7 @@
         </div>
 
         <div class="section-title">⚪ 充值订阅，联系客服，实时操作</div>
+        <!-- QQ群复制 -->
         <div class="qq-group-box">
             <div class="qq-group-title">⚪ 官方交流QQ群（点击可复制群号）</div>
             <div class="qq-group-list">
@@ -449,6 +502,7 @@
             </div>
         </div>
 
+        <!-- 客服按钮 -->
         <div class="contact-card">
             <a href="weixin://" class="btn btn-wechat" onclick="copyText('CNpphot', '微信客服号已成功复制：CNpphot \n\n请打开微信，点击右上角加号【添加朋友】直接粘贴搜索！')">
                 🟢 微信客服：CNpphot (点击复制)
@@ -464,7 +518,8 @@
             </a>
         </div>
 
-         <div class="direct-links-box">
+         <!-- 各网站直达链接模块 -->
+        <div class="direct-links-box">
             <div class="links-title">🔗 各网站直达链接</div>
             <div class="links-grid">
                 <a href="https://onlyfans.com" target="_blank" class="direct-url" title="OnlyFans">onlyfans.com</a>
@@ -482,6 +537,7 @@
             </div>
         </div>
 
+        <!-- 留言板 -->
         <div class="message-board">
             <div class="message-title">📝 上面没有列出的网站，也可实时充值订阅，留言或直接联系QQ客服。</div>
             <form onsubmit="handleMailSubmit(event)">
@@ -492,7 +548,8 @@
                     <textarea id="message_content" class="form-textarea" placeholder="请写下您需要代阅的网站名称或具体链接..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">提交留言</button>
-         <div style="width: 100%; text-align: center; margin-top: 15px;">
+         <!-- 底部宣传图 -->
+        <div style="width: 100%; text-align: center; margin-top: 15px;">
             <img src="bottom-banner.jpg" alt="一站式海外多平台代充代订服务宣传图" style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;" onerror="this.style.display='none'">
         </div>
             </form>
