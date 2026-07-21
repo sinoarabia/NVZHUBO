@@ -220,6 +220,19 @@
         .notice-item:last-child { margin-bottom: 0; }
         .notice-num { color: var(--primary-color); font-weight: bold; }
 
+        /* SEO 教程与文章折叠面板专属样式 (统一移动到 head 中) */
+        .article-section { margin-bottom: 25px; }
+        .article-title-bar { font-size: 15px; font-weight: bold; color: #d63384; margin-bottom: 15px; text-align: center; }
+        .faq-item { background: #fff; border: 1px solid #ffe3e8; border-radius: 10px; margin-bottom: 10px; overflow: hidden; transition: all 0.2s; }
+        .faq-title { padding: 14px 15px; font-weight: 700; color: #495057; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff5f6; transition: background 0.2s; }
+        .faq-title:hover { background: #ffeef1; }
+        .faq-content { padding: 0 15px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: #555; font-size: 13px; line-height: 1.6; }
+        .faq-content p { margin-bottom: 10px; }
+        .faq-item.active .faq-content { padding: 15px; max-height: 800px; border-top: 1px dashed #ffe3e8; background: #fafafa; }
+        .faq-item.active .faq-title { color: #ff4b72; }
+        .faq-arrow { font-size: 12px; color: #ff4b72; transition: transform 0.3s; }
+        .faq-item.active .faq-arrow { transform: rotate(180deg); }
+
         .section-title { font-size: 16px; font-weight: bold; margin-bottom: 18px; color: #666; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px; }
 
         /* QQ群群组卡片 */
@@ -348,7 +361,7 @@
     <div class="content-body">
         <!-- 1:1 像素级还原 8 大官方正版高精度矢量标志矩阵 -->
         <div class="platform-grid">
-            <!-- 1. OnlyFans (带翅膀的正版 of 图标 + 增加 nofollow 和 SVG aria-label) -->
+            <!-- 1. OnlyFans -->
             <a href="https://onlyfans.com" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="OnlyFans代充代订阅">
                 <div class="platform-logo c-logo-svg c-of-shd">
                     <svg viewBox="0 0 100 100" width="32" height="32" aria-label="OnlyFans 官方图标">
@@ -473,7 +486,7 @@
             </div>
         </div>
 
-        <!-- 双营销卡片 (已修正为 h3 层级) -->
+        <!-- 双营销卡片 -->
         <div class="promo-section">
             <div class="promo-left">
                 <h3>你想看的，这里都能订！</h3>
@@ -495,21 +508,8 @@
             <div class="notice-item"><span class="notice-num">1、</span>各平台充值订阅一条龙服务，无需购卡，无需注册账号。客服操作，千人群不怕掉坑。付不上的平台秒退款。</div>
             <div class="notice-item"><span class="notice-num">2、</span>部分网站的视频可以下载，下载软件购买方式可见QQ群公告。</div>
         </div>
-<!-- SEO 教程与文章折叠面板 -->
-        <style>
-            .article-section { margin-bottom: 25px; }
-            .article-title-bar { font-size: 15px; font-weight: bold; color: #d63384; margin-bottom: 15px; text-align: center; }
-            .faq-item { background: #fff; border: 1px solid #ffe3e8; border-radius: 10px; margin-bottom: 10px; overflow: hidden; transition: all 0.2s; }
-            .faq-title { padding: 14px 15px; font-weight: 700; color: #495057; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #fff5f6; transition: background 0.2s; }
-            .faq-title:hover { background: #ffeef1; }
-            .faq-content { padding: 0 15px; max-height: 0; overflow: hidden; transition: all 0.3s ease; color: #555; font-size: 13px; line-height: 1.6; }
-            .faq-content p { margin-bottom: 10px; }
-            .faq-item.active .faq-content { padding: 15px; max-height: 800px; border-top: 1px dashed #ffe3e8; background: #fafafa; }
-            .faq-item.active .faq-title { color: #ff4b72; }
-            .faq-arrow { font-size: 12px; color: #ff4b72; transition: transform 0.3s; }
-            .faq-item.active .faq-arrow { transform: rotate(180deg); }
-        </style>
 
+        <!-- SEO 教程与文章折叠面板 -->
         <div class="article-section">
             <div class="article-title-bar">📚 新手防坑指南与常见平台订阅教程</div>
             
@@ -550,6 +550,7 @@
             </div>
         </div>
         <!-- 折叠面板结束 -->
+
         <div class="section-title">⚪ 充值订阅，联系客服，实时操作</div>
         <!-- QQ群复制 -->
         <div class="qq-group-box">
@@ -609,11 +610,11 @@
                     <textarea id="message_content" class="form-textarea" placeholder="请写下您需要代阅的网站名称或具体链接..." required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">提交留言</button>
-         <!-- 底部宣传图 -->
-        <div style="width: 100%; text-align: center; margin-top: 15px;">
-            <img src="bottom-banner.jpg" alt="一站式海外多平台代充代订服务宣传图" style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;" onerror="this.style.display='none'">
-        </div>
             </form>
+            <!-- 底部宣传图 (移出表单外部，符合 HTML 规范) -->
+            <div style="width: 100%; text-align: center; margin-top: 15px;">
+                <img src="bottom-banner.jpg" alt="一站式海外多平台代充代订服务宣传图" style="width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;" onerror="this.style.display='none'">
+            </div>
         </div>
 
         <div class="footer">
