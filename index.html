@@ -19,8 +19,8 @@
     <meta property="og:site_name" content="多平台代订阅服务">
     <!-- ==================== SEO 优化配置结束 ==================== -->
 
-    <!-- 优化：外部高效小图标 -->
-    <link rel="icon" href="https://pages.dev">
+    <!-- 优化：外部高效小图标 (已修复路径) -->
+    <link rel="icon" href="/favicon.ico">
     
     <style>
         :root {
@@ -162,7 +162,7 @@
         .feature-text div:first-child { font-size: 14px; font-weight: bold; color: #d63384; }
         .feature-text div:last-child { font-size: 12px; color: #868e96; }
 
-        /* 营销宣传双卡片 */
+        /* 营销宣传双卡片 (同步修改 h3 保持布局完美一致) */
         .promo-section {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
@@ -178,7 +178,7 @@
             flex-direction: column;
             justify-content: center;
         }
-        .promo-left h4 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+        .promo-left h3 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
         .promo-left p { font-size: 13px; opacity: 0.9; }
         .promo-right {
             background-color: #fef7ec;
@@ -192,7 +192,7 @@
             align-items: center;
             justify-content: center;
         }
-        .promo-right h4 { font-size: 15px; font-weight: 800; color: #5d4037; }
+        .promo-right h3 { font-size: 15px; font-weight: 800; color: #5d4037; }
         .promo-right p { font-size: 12px; color: #8d6e63; margin-bottom: 6px; }
         .promo-tag { background: var(--primary-color); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 12px; font-weight: bold; }
 
@@ -311,6 +311,29 @@
             .features-box { grid-template-columns: 1fr; }
         }
     </style>
+
+    <!-- ==================== 结构化数据 (JSON-LD) ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "nvzhubo.shop - 海外多平台代订阅服务",
+      "url": "https://nvzhubo.shop/",
+      "description": "专业提供OnlyFans、Fansly、Fantia、Myfans等海外优质内容多平台代充、代订阅服务。",
+      "image": "https://nvzhubo.shop/bottom-banner.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "url": "https://t.me/my1girls",
+        "availableLanguage": ["Chinese"]
+      },
+      "offers": {
+        "@type": "Offer",
+        "category": "Subscription Service",
+        "description": "提供免注册、无坑无骗的极速代订服务。"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -325,10 +348,10 @@
     <div class="content-body">
         <!-- 1:1 像素级还原 8 大官方正版高精度矢量标志矩阵 -->
         <div class="platform-grid">
-            <!-- 1. OnlyFans (带翅膀的正版 of 图标) -->
-            <a href="https://onlyfans.com" target="_blank" class="platform-card" title="OnlyFans代充代订阅">
+            <!-- 1. OnlyFans (带翅膀的正版 of 图标 + 增加 nofollow 和 SVG aria-label) -->
+            <a href="https://onlyfans.com" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="OnlyFans代充代订阅">
                 <div class="platform-logo c-logo-svg c-of-shd">
-                    <svg viewBox="0 0 100 100" width="32" height="32">
+                    <svg viewBox="0 0 100 100" width="32" height="32" aria-label="OnlyFans 官方图标">
                         <path d="M45,25 C31,25 20,36 20,50 C20,64 31,75 45,75 C53,75 60,71 65,65 L54,58 C52,61 49,63 45,63 C38,63 32,57 32,50 C32,43 38,37 45,37 C49,37 52,39 54,42 L65,35 C60,29 53,25 45,25 Z" fill="#008ee6"/>
                         <path d="M53,46 C56,40 61,33 70,30 C76,28 83,29 83,29 C83,29 78,35 76,41 C74,47 76,51 81,54 C85,56 90,56 90,56 C90,56 83,62 77,63 C70,64 64,60 60,54 L53,46 Z" fill="#00a2ed"/>
                     </svg>
@@ -336,10 +359,10 @@
                 <div class="platform-name">OnlyFans</div>
             </a>
 
-            <!-- 2. Myfans (正版红粉拼色开锁图标) -->
-            <a href="https://myfans.jp" target="_blank" class="platform-card" title="Myfans代充代订阅">
+            <!-- 2. Myfans -->
+            <a href="https://myfans.jp" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Myfans代充代订阅">
                 <div class="platform-logo c-logo-svg c-mf-shd">
-                    <svg viewBox="0 0 100 100" width="30" height="30">
+                    <svg viewBox="0 0 100 100" width="30" height="30" aria-label="Myfans 官方图标">
                         <path d="M50,38 C42,38 35,45 35,53 C35,62 42,69 50,69 C58,69 65,62 65,53 C65,45 58,38 50,38 Z M50,59 C47,59 45,56 45,53 C45,50 47,48 50,48 C53,48 55,50 55,53 C55,56 53,59 50,59 Z" fill="#ff3a69"/>
                         <path d="M65,42 L65,28 C65,20 58,13 50,13 C42,13 35,20 35,28 L45,28 C45,25 47,23 50,23 C53,23 55,25 55,28 L55,42 Z" fill="#ff3a69"/>
                     </svg>
@@ -347,10 +370,10 @@
                 <div class="platform-name">Myfans</div>
             </a>
 
-            <!-- 3. Fansone (正版萌系卡通大笑朱哥图标) -->
-            <a href="https://fansone.co" target="_blank" class="platform-card" title="Fansone代充代订阅">
+            <!-- 3. Fansone -->
+            <a href="https://fansone.co" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Fansone代充代订阅">
                 <div class="platform-logo c-logo-svg">
-                    <svg viewBox="0 0 100 100" width="32" height="32">
+                    <svg viewBox="0 0 100 100" width="32" height="32" aria-label="Fansone 官方图标">
                         <rect x="25" y="15" width="50" height="60" rx="25" fill="none" stroke="#4a5568" stroke-width="6"/>
                         <path d="M25,50 L12,50 C12,42 16,36 22,36" fill="none" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
                         <path d="M75,50 L88,50 C88,42 84,36 78,36" fill="none" stroke="#4a5568" stroke-width="6" stroke-linecap="round"/>
@@ -366,10 +389,10 @@
                 <div class="platform-name">Fansone</div>
             </a>
 
-            <!-- 4. Loyalfans (正版红色胜利 Y 字小人图标) -->
-            <a href="https://loyalfans.com" target="_blank" class="platform-card" title="Loyalfans代充代订阅">
+            <!-- 4. Loyalfans -->
+            <a href="https://loyalfans.com" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Loyalfans代充代订阅">
                 <div class="platform-logo c-logo-svg">
-                    <svg viewBox="0 0 100 100" width="30" height="30">
+                    <svg viewBox="0 0 100 100" width="30" height="30" aria-label="Loyalfans 官方图标">
                         <circle cx="50" cy="22" r="10" fill="#e60039"/>
                         <path d="M50,44 C45,44 26,26 16,32 C12,34 32,56 42,66 L42,90 L58,90 L58,66 C68,56 88,34 84,32 C74,26 55,44 50,44 Z" fill="#e60039"/>
                     </svg>
@@ -377,10 +400,10 @@
                 <div class="platform-name">Loyalfans</div>
             </a>
 
-            <!-- 5. Fantia (正版复古像素拼色英文字体图标) -->
-            <a href="https://fantia.jp" target="_blank" class="platform-card" title="Fantia代充代订阅">
+            <!-- 5. Fantia -->
+            <a href="https://fantia.jp" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Fantia代充代订阅">
                 <div class="platform-logo c-logo-svg">
-                    <svg viewBox="0 0 150 45" width="55" height="24">
+                    <svg viewBox="0 0 150 45" width="55" height="24" aria-label="Fantia 官方图标">
                         <text x="0" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#8bc34a" letter-spacing="1">F</text>
                         <text x="24" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#e91e63" letter-spacing="1">a</text>
                         <text x="46" y="32" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#9c27b0" letter-spacing="1">n</text>
@@ -392,10 +415,10 @@
                 <div class="platform-name">Fantia</div>
             </a>
 
-            <!-- 6. Manyvids (正版粉红皇冠锁孔爱心图标) -->
-            <a href="https://manyvids.com" target="_blank" class="platform-card" title="Manyvids代充代订阅">
+            <!-- 6. Manyvids -->
+            <a href="https://manyvids.com" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Manyvids代充代订阅">
                 <div class="platform-logo c-logo-svg c-mv-shd">
-                    <svg viewBox="0 0 100 100" width="34" height="34">
+                    <svg viewBox="0 0 100 100" width="34" height="34" aria-label="Manyvids 官方图标">
                         <path d="M50,22 C56,13 66,7 78,7 C93,7 105,19 105,34 C105,53 82,75 54,96 L50,100 L46,96 C18,75 -5,53 -5,34 C-5,19 7,7 22,7 C34,7 44,13 50,22 Z" fill="#ff2a73" transform="scale(0.7) translate(22, 40)"/>
                         <path d="M50,56 C46.7,56 44,58.7 44,62 C44,64.3 45.3,66.3 47.2,67.3 L45,76 L55,76 L52.8,67.3 C54.7,66.3 56,64.3 56,62 C56,58.7 53.3,56 50,56 Z" fill="#ffffff"/>
                         <circle cx="50" cy="61" r="2.5" fill="#ff2a73"/>
@@ -406,10 +429,10 @@
                 <div class="platform-name">Manyvids</div>
             </a>
 
-            <!-- 7. Fansly (正版天蓝爱心镜头密码锁图标) -->
-            <a href="https://fansly.com" target="_blank" class="platform-card" title="Fansly代充代订阅">
+            <!-- 7. Fansly -->
+            <a href="https://fansly.com" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Fansly代充代订阅">
                 <div class="platform-logo c-logo-svg c-fly-shd">
-                    <svg viewBox="0 0 100 100" width="30" height="30">
+                    <svg viewBox="0 0 100 100" width="30" height="30" aria-label="Fansly 官方图标">
                         <path d="M50,88 C34,74 15,55 15,36 C15,22 25,12 38,12 C46,12 51,18 54,23 L62,34 L73,21 C76,17 81,12 88,12 C99,12 107,22 107,36 C107,46 99,57 88,67 L57,90" fill="none" stroke="#0066ff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" transform="translate(-6, 2) scale(0.9)"/>
                         <circle cx="50" cy="53" r="8" fill="#0066ff" />
                         <circle cx="53" cy="50" r="2.5" fill="#ffffff" />
@@ -418,10 +441,10 @@
                 <div class="platform-name">Fansly</div>
             </a>
 
-            <!-- 8. Justforfans (正版圆角重工业 JFF 粗体黑底白字图标) -->
-            <a href="https://justfor.fans" target="_blank" class="platform-card" title="Justforfans代充代订阅">
+            <!-- 8. Justforfans -->
+            <a href="https://justfor.fans" target="_blank" rel="nofollow noopener noreferrer" class="platform-card" title="Justforfans代充代订阅">
                 <div class="platform-logo c-logo-svg">
-                    <svg viewBox="0 0 100 100" width="32" height="32">
+                    <svg viewBox="0 0 100 100" width="32" height="32" aria-label="Justforfans 官方图标">
                         <rect x="5" y="15" width="90" height="70" rx="14" fill="#000000"/>
                         <text x="50" y="63" font-family="'Arial', 'Helvetica', sans-serif" font-weight="900" font-size="46" fill="#ffffff" text-anchor="middle" letter-spacing="-2">JFF</text>
                     </svg>
@@ -450,20 +473,21 @@
             </div>
         </div>
 
-        <!-- 双营销卡片 -->
+        <!-- 双营销卡片 (已修正为 h3 层级) -->
         <div class="promo-section">
             <div class="promo-left">
-                <h4>你想看的，这里都能订！</h4>
+                <h3>你想看的，这里都能订！</h3>
                 <p>支持更多平台，欢迎咨询定制~</p>
             </div>
             <div class="promo-right">
-                <h4>专业代订团队</h4>
+                <h3>专业代订团队</h3>
                 <p>专注海外订阅服务</p>
                 <div class="promo-tag">让喜欢的创作者，触手可及！</div>
             </div>
         </div>
 
-        <div class="web-url-tips">🌐 访问主页了解避坑技巧：<span>https://pphoting.com/</span></div>
+        <!-- 优化反向链接权重传递，激活主站外链 -->
+        <div class="web-url-tips">🌐 访问主页了解避坑技巧：<a href="https://pphoting.com/" target="_blank" style="color: var(--primary-color); text-decoration: underline;">https://pphoting.com/</a></div>
 
         <!-- 重要提醒区 -->
         <div class="notice-box">
@@ -496,27 +520,27 @@
             <a href="tencent://message/?uin=3654697656&Site=客服&Menu=yes" class="btn btn-qq" target="_blank">
                 🔵 QQ群管理员2：3654697656 (发起聊天)
             </a>
-            <a href="https://t.me" class="btn btn-tg" target="_blank" onclick="copyText('t.me/my1girls', '频道用户名已成功复制：t.me/my1girls')">
+            <a href="https://t.me/my1girls" class="btn btn-tg" target="_blank" onclick="copyText('t.me/my1girls', '频道用户名已成功复制：t.me/my1girls')">
                 🔷 Telegram 客服 (https://t.me/my1girls)
             </a>
         </div>
 
-         <!-- 各网站直达链接模块 -->
+         <!-- 各网站直达链接模块 (增加 nofollow 防权重流失) -->
         <div class="direct-links-box">
             <div class="links-title">🔗 各网站直达链接</div>
             <div class="links-grid">
-                <a href="https://onlyfans.com" target="_blank" class="direct-url" title="OnlyFans">onlyfans.com</a>
-                <a href="https://fansone.co" target="_blank" class="direct-url" title="Fansone">fansone.co</a>
-                <a href="https://myfans.jp" target="_blank" class="direct-url" title="Myfans">myfans.jp</a>
-                <a href="https://justfor.fans" target="_blank" class="direct-url" title="Justforfans">justfor.fans</a>
-                <a href="https://fansly.com" target="_blank" class="direct-url" title="Fansly">fansly.com</a>
-                <a href="https://fantia.jp" target="_blank" class="direct-url" title="Fantia">fantia.jp</a>
-                <a href="https://myfans.asia" target="_blank" class="direct-url" title="Myfans Asia">myfans.asia</a>
-                <a href="https://loyalfans.com" target="_blank" class="direct-url" title="Loyalfans">loyalfans.com</a>
-                <a href="https://fanvue.com" target="_blank" class="direct-url" title="Fanvue">fanvue.com</a>
-                <a href="https://clips4sale.com" target="_blank" class="direct-url" title="Clips4sale">clips4sale.com</a>
-                <a href="https://manyvids.com" target="_blank" class="direct-url" title="Manyvids">manyvids.com</a>
-                <a href="https://velvetsfantasies.com" target="_blank" class="direct-url" title="Velvet's Fantasies">velvetsfantasies.com</a>
+                <a href="https://onlyfans.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="OnlyFans">onlyfans.com</a>
+                <a href="https://fansone.co" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Fansone">fansone.co</a>
+                <a href="https://myfans.jp" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Myfans">myfans.jp</a>
+                <a href="https://justfor.fans" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Justforfans">justfor.fans</a>
+                <a href="https://fansly.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Fansly">fansly.com</a>
+                <a href="https://fantia.jp" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Fantia">fantia.jp</a>
+                <a href="https://myfans.asia" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Myfans Asia">myfans.asia</a>
+                <a href="https://loyalfans.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Loyalfans">loyalfans.com</a>
+                <a href="https://fanvue.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Fanvue">fanvue.com</a>
+                <a href="https://clips4sale.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Clips4sale">clips4sale.com</a>
+                <a href="https://manyvids.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Manyvids">manyvids.com</a>
+                <a href="https://velvetsfantasies.com" target="_blank" rel="nofollow noopener noreferrer" class="direct-url" title="Velvet's Fantasies">velvetsfantasies.com</a>
             </div>
         </div>
 
